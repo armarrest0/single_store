@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>购买第二步
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                    key 当前登录令牌</br>
+ifcart 购物车购买标志 1</br>
+cart_id 购买参数</br>
+address_id 收货地址编号</br>
+vat_hash 发票信息hash，第一步接口提供</br>
+offpay_hash 是否支持货到付款hash，通过更换收货地址接口获得</br>
+offpay_hash_batch 店铺是否支持货到付款hash</br>
+pay_name 付款方式，可选值 online(线上付款) offline(货到付款)</br>
+invoice_id 发票信息编号</br>
+voucher 代金券，内容以竖线分割 voucher_t_id|store_id|voucher_price，多个店铺用逗号分割，例：10|2|10,1|3|10</br>
+pd_pay 是否使用预存款支付 1-使用 0-不使用</br>
+password 用户支付密码，启动预存款支付时需要提交</br>
+fcode F码购买时需提交</br>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self">
+ 						key<input id="key" name="key" />
+                        购买参数<input id="cart_id " name="cart_id" />
+                        购物车购买标志<input id="ifcart" name="ifcart" />
+                        收货地址编号<input id="address_id " name="address_id" />
+                        发票信息hash<input id="vat_hash" name="vat_hash" />
+                        货到付款hash<input id="offpay_hash " name="offpay_hash" />
+                        店铺是否支持货到付款hash<input id="offpay_hash_batch" name="offpay_hash_batch" />
+                        付款方式<input id="pay_name " name="pay_name" />
+                        发票信息编号<input id="invoice_id" name="invoice_id" />
+                        代金券<input id="voucher" name="voucher" />
+                        是否使用预存款支付<input id="pd_pay " name="pd_pay" />
+                        用户支付密码<input id="password" name="password" />                        
+                        F码<input id="fcode" name="fcode" />
+                        <input type="submit" value="提交" onClick="subform();" />
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+pay_sn 支付编号
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_buy&op=buy_step2"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_buy&op=buy_step2";  
+form1.submit(); 
+} 
+</script> 
+</html>

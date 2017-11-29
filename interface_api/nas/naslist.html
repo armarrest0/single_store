@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>热点列表
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td> 
+                <td>Get
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+datas: {
+nas_list: [
+{
+id: "2662",                                         //热点id
+nc_id: "1",                                         //热点分类id
+nas_name: "江东火车东站",                            //热点名称   
+nas_group: "江东火车东站",                           //热点分组名称
+nas_id: "1",                                        //热点nasid
+nas_area: "江东区",                                 //热点区域
+nas_position: "江东区东方商务中心南侧",             //热点位置
+nas_coverarea: "地下1楼、2楼候车大厅",               //热点覆盖
+nas_coverscene: "交通枢纽",                         
+nas_long: "121.581997",                             //热点原始 经度
+nas_lat: "29.850945",                               //热点原始 纬度
+nas_ac_ip: "10.140.255.102",                        //ip地址
+nas_connecttime: "0000-00-00 00:00:00",
+nas_apcount: "4",                                   //ap数量
+nas_attribution: "电信",                            //所属运营商
+adv_ids: "",
+bdlat: "29.854391676015",                           //转换后 百度 纬度
+bdlong: "121.59256384464"                           //转换后 百度 经度
+}
+]
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=nas&op=nas_list"; 
+</script>
+</html>

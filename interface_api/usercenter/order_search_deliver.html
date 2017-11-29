@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>订单物流信息 
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height:  25px;'>
+                 order_id 订单id
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self">
+
+                        订单ID:<input id="order_id" name="order_id" />
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+status: 1,
+datas: {
+delivery: {
+id: "1",
+name: "顺丰快递",
+identif: "shunfeng",
+enabled: "1",
+logo: "",
+insure: "0.00",
+tpl: null,
+sort: "100",
+systime: "1510638411"
+},
+tracks: [
+{
+id: "12",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640767",
+msg: "感谢您在单店购物，欢迎您的再次光临",
+add_time: "1510640767",
+clientip: "0.0.0.0"
+},
+{
+id: "11",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510126465",
+msg: "已签收,感谢使用顺丰,期待再次为您服务",
+add_time: "1510640698",
+clientip: "0.0.0.0"
+},
+{
+id: "10",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510122231",
+msg: "快件交给袁勇峰，正在派送途中（联系电话：18357406120）",
+add_time: "1510640698",
+clientip: "0.0.0.0"
+},
+{
+id: "9",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510120305",
+msg: "快件到达 【宁波市鄞州区学府一号营业点】",
+add_time: "1510640698",
+clientip: "0.0.0.0"
+},
+{
+id: "8",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510117386",
+msg: "快件在【宁波鄞州集散中心2】装车，已发往下一站",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "7",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510110625",
+msg: "快件到达 【宁波鄞州集散中心2】",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "6",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510106019",
+msg: "快件在【宁波市北仑区四方家园营业点】装车，已发往下一站",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "5",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510099809",
+msg: "顺丰速运 已收取快件",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "4",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640690",
+msg: "您的订单配货完毕，已经发货。快递单号：367929040291",
+add_time: "1510640690",
+clientip: "0.0.0.0"
+},
+{
+id: "3",
+delivery_id: "0",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640617",
+msg: "您的订单已确认，正在配货",
+add_time: "1510640617",
+clientip: "0.0.0.0"
+},
+{
+id: "2",
+delivery_id: "0",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640557",
+msg: "您的订单已付款，请等待系统确认",
+add_time: "1510640557",
+clientip: "0.0.0.0"
+},
+{
+id: "1",
+delivery_id: "0",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640552",
+msg: "您提交了订单，系统正在等待付款",
+add_time: "1510640552",
+clientip: "0.0.0.0"
+}
+]
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_delivery"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_delivery";  
+form1.submit(); 
+} 
+</script>
+
+</html>

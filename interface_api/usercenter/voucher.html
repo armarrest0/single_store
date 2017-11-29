@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>上架代金券列表
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>
+                </td>
+                <td style='line-height: 25px;'>
+                 返回值参数说明：voucher_t_id（上架代金券编号）
+                   
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                   <form  id = "form1"   name = "form1"   method = "post" target="_self">                     
+                        <input type="submit" value="提交" onClick="subform();" />
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+hasmore: false,
+page_total: 1,
+datas: {
+voucherlist: [
+{
+voucher_t_id: "3",
+voucher_t_title: "dcdcdc",
+voucher_t_desc: "123123",
+voucher_t_start_date: "1457070548",
+voucher_t_end_date: "1459353600",
+voucher_t_price: "20",
+voucher_t_limit: 25,
+voucher_t_store_id: "9",
+voucher_t_storename: "糖果",
+voucher_t_sc_id: "1",
+voucher_t_creator_id: "824",
+voucher_t_state: "1",
+voucher_t_total: "123",
+voucher_t_giveout: "3",
+voucher_t_used: "0",
+voucher_t_add_date: "1457070548",
+voucher_t_quotaid: "4",
+voucher_t_points: "40",
+voucher_t_eachlimit: "1",
+voucher_t_styleimg: null,
+voucher_t_customimg: "http://m.5iningbo.com:18012/data/upload/shop/common/default_goods_image_240.gif",
+voucher_t_recommend: "1",
+voucher_t_sc_name: "旗舰店"
+},
+{
+voucher_t_id: "2",
+voucher_t_title: "xexexe",
+voucher_t_desc: "4545454545",
+voucher_t_start_date: "1457070441",
+voucher_t_end_date: "1459267200",
+voucher_t_price: "100",
+voucher_t_limit: 120,
+voucher_t_store_id: "9",
+voucher_t_storename: "糖果",
+voucher_t_sc_id: "1",
+voucher_t_creator_id: "824",
+voucher_t_state: "1",
+voucher_t_total: "100",
+voucher_t_giveout: "1",
+voucher_t_used: "0",
+voucher_t_add_date: "1457070441",
+voucher_t_quotaid: "4",
+voucher_t_points: "1000",
+voucher_t_eachlimit: "1",
+voucher_t_styleimg: null,
+voucher_t_customimg: "http://m.5iningbo.com:18012/data/upload/shop/common/default_goods_image_240.gif",
+voucher_t_recommend: "1",
+voucher_t_sc_name: "旗舰店"
+}
+]
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=voucherlist&op=vlist"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=voucherlist&op=vlist";  
+form1.submit(); 
+} 
+</script>
+</html>

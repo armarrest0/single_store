@@ -1,0 +1,3 @@
+<?php
+//000000000000a:9:{i:0;s:8:"token_id";i:1;s:9:"member_id";i:2;s:11:"member_name";i:3;s:5:"token";i:4;s:10:"login_time";i:5;s:11:"client_type";s:8:"_autoinc";b:1;s:3:"_pk";s:8:"token_id";s:5:"_type";a:6:{s:8:"token_id";s:16:"int(10) unsigned";s:9:"member_id";s:16:"int(10) unsigned";s:11:"member_name";s:11:"varchar(50)";s:5:"token";s:11:"varchar(50)";s:10:"login_time";s:16:"int(10) unsigned";s:11:"client_type";s:11:"varchar(10)";}}
+?>

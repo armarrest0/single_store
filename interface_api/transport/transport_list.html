@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>运费列表
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                   key 当前登录令牌                   
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">
+                        <input id="key" name="key" />
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+
+	title:运费模板名称
+        send_tpl_id:发货地区模板ID
+        store_id:店铺ID
+        update_time:最后更新时间
+        
+        
+        id:运费模板扩展ID
+        area_id:市级地区ID组成的串，以，隔开，两端也有
+        top_area_id:省级地区ID组成的串，以，隔开，两端也有，
+        area_name:地区name组成的串，以，隔开
+        snum:首件数量
+        sprice:首件运费
+        xnum:续件数量
+        xprice:续件运费
+        is_default:是否默认运费1是2否
+        transport_id:运费模板ID
+        transport_title:运费模板
+        
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_store&op=list"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_store&op=list";  
+form1.submit(); 
+} 
+</script>
+
+</html>

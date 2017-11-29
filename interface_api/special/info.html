@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>专题内容
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>Get
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数special_id
+                </td>
+                <td style='line-height: 25px;'>
+                   int
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+	code: 200,
+	special_name: "哥哥3",
+        datas: [
+        {
+            home6: {
+            title: "",
+            square_image: "http://localhost/data/upload/mobile/special/s23/s23_04979823329446858.jpg",
+            square_type: "",
+            square_data: "",
+            square_title: "",
+            rectangle1_image: "http://localhost/data/upload/mobile/special/s23/s23_04979823386444011.jpg",
+            rectangle1_type: "",
+            rectangle1_data: "",
+            rectangle1_title: "",
+            rectangle2_image: "http://localhost/data/upload/shop/common/default_goods_image_240.gif"
+            },
+        }
+        ]
+}
+
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=index&op=special3&special_id=23"; 
+</script>
+</html>

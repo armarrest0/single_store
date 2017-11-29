@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>订单列表
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                   key 当前登录令牌
+                   order_state 当前状态
+                   m6_version=1 M6版本标记
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self">
+                        KEY:<input id="key" name="key" />
+						订单状态：<input id="order_state" name="order_state" />
+                                               m6_version<input id="order_state" name="m6_version" value="1"/>
+                        <input type="submit" value="提交" onClick="subform();" />
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+order_group_list
+    order_list 订单列表
+        order_id 订单id
+        order_sn 订单sn
+        store_name 店铺名称
+        goods_amount 商品总价
+        order_amount 订单总价
+        pd_amount 预存款支付总价
+        shipping_fee 运费
+        state_desc 状态文字
+        payment_name 支付方式文字
+        if_cancel 是否显示取消按钮 true/false
+        if_receive 是否显示确认收货按钮 true/false
+        if_lock 是否显示锁定中状态 true/false
+        if_deliver 是否显示查看物流按钮 true/false
+	if_refund_cancel:  是否显示退款按钮 true/false
+	refund:  发货后是否显示退款按钮 1/0
+        extend_order_goods 订单商品列表
+            goods_name 商品名称
+            goods_price 商品价格
+            goods_num 商品购买数量
+            goods_image_url 商品图片地址
+    pay_amount 支付总额，该字段存在且大于0时显示支付按钮
+    add_time 订单提交时间
+    pay_sn 支付编号
+
+
+订单状态
+0-已取消
+10-未支付
+20-已支付
+30-已发货
+40-交易成功
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_list"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_list";  
+form1.submit(); 
+} 
+</script>
+
+</html>

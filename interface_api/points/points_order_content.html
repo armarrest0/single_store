@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>兑换内容信息
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>POST
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数
+                </td>
+                <td style='line-height: 25px;'>   
+                   key 登录令牌 pgid 积分商品ID quantity 兑换数量
+                </td>
+            </tr>
+            
+             <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">     
+                        key:<input type="text" name="key" value="" />
+                        pgid<input type="text" name="pgid" value="" />                        
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+datas: {
+order_content: {
+pgoods_id: "6",
+pgoods_name: "书包",
+pgoods_price: "200.00",
+pgoods_points: "20",
+pgoods_image: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif",
+pgoods_tag: "",
+pgoods_serial: "4",
+pgoods_storage: "27",
+pgoods_show: "1",
+pgoods_commend: "0",
+pgoods_add_time: "1451463885",
+pgoods_keywords: "",
+pgoods_description: "",
+pgoods_body: "",
+pgoods_state: "0",
+pgoods_close_reason: "",
+pgoods_salenum: "3",
+pgoods_view: "3",
+pgoods_islimit: "0",
+pgoods_limitnum: "0",
+pgoods_islimittime: "0",
+pgoods_limitmgrade: "0",
+pgoods_starttime: "0",
+pgoods_endtime: "0",
+pgoods_sort: "0",
+pgoods_image_old: "05048078851967177.jpg",
+pgoods_image_small: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif",
+ex_state: "going",
+address_list: [],
+member_info: {}
+}
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_index&op=content"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_index&op=content"; 
+form1.submit(); 
+} 
+</script> 
+
+</html>

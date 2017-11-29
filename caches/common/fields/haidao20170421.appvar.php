@@ -1,0 +1,3 @@
+<?php
+//000000000000a:12:{i:0;s:2:"id";i:1;s:4:"type";i:2;s:5:"value";i:3;s:5:"appid";i:4;s:5:"title";i:5;s:11:"description";i:6;s:8:"variable";i:7;s:5:"extra";i:8;s:12:"displayorder";s:8:"_autoinc";b:1;s:3:"_pk";s:2:"id";s:5:"_type";a:9:{s:2:"id";s:12:"mediumint(8)";s:4:"type";s:11:"varchar(50)";s:5:"value";s:4:"text";s:5:"appid";s:11:"smallint(6)";s:5:"title";s:12:"varchar(100)";s:11:"description";s:12:"varchar(255)";s:8:"variable";s:11:"varchar(40)";s:5:"extra";s:4:"text";s:12:"displayorder";s:6:"int(8)";}}
+?>

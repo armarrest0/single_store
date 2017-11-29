@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>订单详情
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height:  25px;'>
+                   key 当前登录令牌 order_id 订单id
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self">
+                        KEY:<input id="key" name="key" />
+                        订单编号:<input id="order_id " name="order_id" />
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+order_id: "969",
+order_sn: "8000000000101501",
+pay_sn: "740530285525908047",
+store_id: "18",
+store_name: "m6生鲜店",
+buyer_id: "2047",
+buyer_name: "15757871352",
+buyer_email: null,
+add_time: "1476941502",
+payment_code: "offline",
+payment_time: "0",
+finnshed_time: "0",
+goods_amount: "80.00",
+order_amount: "80.00",
+rcb_amount: "0.00",
+pd_amount: "0.00",
+shipping_fee: "0.00",
+evaluation_state: "0",
+order_state: "40",
+refund_state: "0",
+lock_state: "0",
+delete_state: "0",
+refund_amount: "0.00",
+delay_time: "0",
+order_from: "2",
+shipping_code: "",
+order_belongs: 0,
+state_desc: "交易完成",
+payment_name: "货到付款",
+  extend_order_common: {
+  order_id: "969",
+  store_id: "18",
+  shipping_time: "0",
+  shipping_express_id: "0",
+  evaluation_time: "0",
+  evalseller_state: "0",
+  evalseller_time: "0",
+  order_message: null,
+  order_pointscount: "0",
+  voucher_price: null,
+  voucher_code: null,
+  deliver_explain: null,
+  daddress_id: "0",
+  reciver_name: "111",
+  reciver_info: {
+    phone: "11111111111",
+    mob_phone: "11111111111",
+    tel_phone: "",
+    address: "辽宁 本溪市 明山区 123123",
+    area: "辽宁 本溪市 明山区",
+    street: "123123"
+    },
+  reciver_province_id: "0",
+  reciver_city_id: "111",
+  invoice_info: false,
+  promotion_info: "",
+  dlyo_pickup_code: null
+  },
+extend_store: {
+  store_id: "18",
+  store_name: "m6生鲜店",
+  grade_id: "1",
+  member_id: "2050",
+  member_name: "mystore",
+  seller_name: "mystore",
+  sc_id: "3",
+  store_company_name: "m6生鲜店",
+  province_id: "0",
+  area_info: "北京 北京市 东城区",
+  store_address: "213123",
+  store_zip: "",
+  store_state: "1",
+  store_close_info: null,
+  store_sort: "0",
+  store_time: "1476782260",
+  store_end_time: "1508428799",
+  store_label: null,
+  store_banner: null,
+  store_avatar: null,
+  store_keywords: "",
+  store_description: "",
+  store_qq: null,
+  store_ww: null,
+  store_phone: null,
+  s tore_zy: "",
+  store_domain: null,
+  store_domain_times: "0",
+  store_recommend: "0",
+  store_theme: "default",
+  store_credit: "0",
+  store_desccredit: "0",
+  store_servicecredit: "0",
+  store_deliverycredit: "0",
+  store_collect: "0",
+  store_slide: ,
+  store_slide_url: ,
+  store_stamp: ,
+  store_printdesc: ,
+  store_sales: "0",
+  store_presales: ,
+  store_aftersales: ,
+  store_workingtime: ,
+  store_free_price: "0.00",
+  store_decoration_switch: "0",
+  store_decoration_only: "0",
+  store_decoration_image_count: "0",
+  live_store_name: ,
+  live_store_address: ,
+  live_store_tel: ,
+  live_store_bus: ,
+  is_own_shop: "0",
+  bind_all_gc: "0",
+  store_vrcode_prefix: ,
+  store_baozh: "0",
+  store_baozhopen: "0",
+  store_baozhrmb: "零",
+  store_qtian: "0",
+  store_zhping: "0",
+  store_erxiaoshi: "0",
+  store_tuihuo: "0",
+  store_shiyong: "0",
+  store_shiti: "0",
+  store_xiaoxie: "0",
+  store_huodaofk: "0"
+  },
+extend_order_goods: [
+{
+    rec_id: "1095",
+    order_id: "969",
+    goods_id: "599",
+    goods_name: "我的m6测试鱼",
+    goods_price: "20.00",
+    goods_num: "2000",
+    goods_image: "2016/10/19/18_05302022515625650.png",
+    goods_pay_price: "40000.00",
+    store_id: "18",
+    buyer_id: "2047",
+    goods_type: "1",
+    promotions_id: "0",
+    commis_rate: "200",
+    gc_id: "791",
+    refund: "0"
+    }
+    ],  
+    if_cancel: false,
+    if_refund_cancel: false,
+    if_complain: false,
+    if_receive: false,
+    if_lock: false,
+    if_deliver: false,
+    if_evaluation: true,
+    if_delete: true,
+    if_drop: false,
+    if_restore: false,
+    goods_list: [
+    {
+        rec_id: "1095",
+        order_id: "969",
+        goods_id: "599",
+        goods_name: "我的m6测试鱼",
+        goods_price: "20.00",
+        goods_num: "2000",
+        goods_image: "2016/10/19/18_05302022515625650.png",
+        goods_pay_price: "40000.00",
+        store_id: "18",
+        buyer_id: "2047",
+        goods_type: "1",
+        promotions_id: "0",
+        commis_rate: "200",
+        gc_id: "791",
+        refund: "0",
+        image_60_url: "http://localhost:86/data/upload/shop/common/default_goods_image_60.gif",
+        image_240_url: "http://localhost:86/data/upload/shop/common/default_goods_image_240.gif",
+        goods_type_cn: "",
+        goods_url: "http://localhost:86/shop/index.php?act=goods&op=index&goods_id=599"
+        show_m6_price_str: "V卡价：￥20.00/500g",
+        show_goods_fina_price: "￥80.00",
+        show_goods_num_units: "2000g"
+        }
+        ],
+goods_count: 1,
+pay_info: 
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_detail"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_detail";  
+form1.submit(); 
+} 
+</script>
+
+</html>

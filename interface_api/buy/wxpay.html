@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>微信支付
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+key 当前登录令牌
+pay_sn 支付编号
+pay_type 支付类型  pd_order为充值 real_order或不填为正常订单
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">
+					  key: <input type="text" name="key" />
+                      pay_sn :<input type="text" name="pay_sn" />
+                      pay_type：<input type="text" name="pay_type" />
+                      <input  name="act" value="member_payment" style="display: none"/>  <input  name="op" value="wx_app_pay3" style="display: none"/>  
+                      <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+datas: {
+appid: "wx88e601de0a9316a3",
+noncestr: "vllna86v14hw0nxg4ubhtn3zgkyc1hiy",
+package: "Sign=WXPay",
+partnerid: "1245652702",
+prepayid: null,
+sign: "FF366F5849995D03A681DD87A929C72A",
+timestamp: 1458800476,
+login: 1,
+result: {
+state: true,
+msg: "",
+data: {
+pay_id: "663",
+pay_sn: "510511959682984644",
+buyer_id: "644",
+api_pay_state: "0",
+subject: "实物订单_510511959682984644",
+order_type: "real_order",
+api_pay_amount: 46,
+order_list: [
+{
+order_id: "679",
+order_sn: "8000000000066303",
+pay_sn: "510511959682984644",
+store_id: "9",
+store_name: "糖果",
+buyer_id: "644",
+buyer_name: "15088824492",
+buyer_email: "dsm2sz9s@qq.com",
+add_time: "1458615682",
+payment_code: "online",
+payment_time: "0",
+finnshed_time: "0",
+goods_amount: "15.00",
+order_amount: "15.00",
+rcb_amount: "0.00",
+pd_amount: "0.00",
+shipping_fee: "0.00",
+evaluation_state: "0",
+order_state: "10",
+refund_state: "0",
+lock_state: "0",
+delete_state: "0",
+refund_amount: "0.00",
+delay_time: "0",
+order_from: "2",
+shipping_code: ""
+},
+{
+order_id: "678",
+order_sn: "8000000000066302",
+pay_sn: "510511959682984644",
+store_id: "11",
+store_name: "12312",
+buyer_id: "644",
+buyer_name: "15088824492",
+buyer_email: "dsm2sz9s@qq.com",
+add_time: "1458615682",
+payment_code: "online",
+payment_time: "0",
+finnshed_time: "0",
+goods_amount: "11.00",
+order_amount: "11.00",
+rcb_amount: "0.00",
+pd_amount: "0.00",
+shipping_fee: "0.00",
+evaluation_state: "0",
+order_state: "10",
+refund_state: "0",
+lock_state: "0",
+delete_state: "0",
+refund_amount: "0.00",
+delay_time: "0",
+order_from: "2",
+shipping_code: ""
+},
+{
+order_id: "677",
+order_sn: "8000000000066301",
+pay_sn: "510511959682984644",
+store_id: "12",
+store_name: "xiujiyuan",
+buyer_id: "644",
+buyer_name: "15088824492",
+buyer_email: "dsm2sz9s@qq.com",
+add_time: "1458615682",
+payment_code: "online",
+payment_time: "0",
+finnshed_time: "0",
+goods_amount: "10.00",
+order_amount: "20.00",
+rcb_amount: "0.00",
+pd_amount: "0.00",
+shipping_fee: "10.00",
+evaluation_state: "0",
+order_state: "10",
+refund_state: "0",
+lock_state: "0",
+delete_state: "0",
+refund_amount: "0.00",
+delay_time: "0",
+order_from: "2",
+shipping_code: ""
+}
+]
+}
+}
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_payment&op=wx_app_pay3"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_payment&op=wx_app_pay3";  
+form1.submit(); 
+} 
+</script>
+</html>

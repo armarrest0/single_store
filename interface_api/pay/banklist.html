@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>银行列表
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                 key
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "get" target="_self">
+                         <input id="username" hidden name="act" value="member_payment" />
+                         <input id="username" hidden name="op" value="banklist_demo" />
+                            <input id="username"hidden name="key" />
+                         key：<input id="username" name="key" />
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+bankCount: "11",   数量
+bankList: {
+bankRow: [
+{
+bankName: "甬易快捷支付",  名称
+bankID: "000Q",           银行ID
+otherBankID: "000Q",    跨行id
+cardType: "X"          支持卡种01：借记卡  02：信用卡  X：借记/信用卡都支持
+},
+{
+bankName: "中国工商银行",
+bankID: "102C",
+otherBankID: "102C",
+cardType: "X"
+},
+{
+bankName: "中国农业银行",
+bankID: "103C",
+otherBankID: "103C",
+cardType: "X"
+},
+{
+bankName: "中国银行",
+bankID: "104C",
+otherBankID: "104C",
+cardType: "X"
+},
+{
+bankName: "中国建设银行",
+bankID: "105C",
+otherBankID: "105C",
+cardType: "X"
+},
+{
+bankName: "交通银行",
+bankID: "301C",
+otherBankID: "301C",
+cardType: "X"
+},
+{
+bankName: "中信银行",
+bankID: "302C",
+otherBankID: "302C",
+cardType: "X"
+},
+{
+bankName: "中国光大银行",
+bankID: "303C",
+otherBankID: "303C",
+cardType: "X"
+},
+{
+bankName: "上海浦东发展银行",
+bankID: "310C",
+otherBankID: "310C",
+cardType: "X"
+},
+{
+bankName: "宁波银行",
+bankID: "320C",
+otherBankID: "320C",
+cardType: "X"
+},
+{
+bankName: "中国银联",
+bankID: "999C",
+otherBankID: "999C",
+cardType: "X"
+}
+]
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_payment&op=banklist_demo"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_payment&op=banklist_demo";  
+form1.submit(); 
+} 
+</script> 
+
+</html>

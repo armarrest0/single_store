@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>支付宝支付签名生成
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+key 当前登录令牌
+pay_sn 支付编号
+pay_type 支付类型 :订单支付 real_order , 预付款充值：pd_order
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">
+                      key: <input type="text" name="key" />
+                      pay_sn :<input type="text" name="pay_sn" />
+                      pay_type :<input type="pay_type" name="pay_type" />
+                      <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+datas: {
+_input_charset: "utf-8",
+body: "秀济源",
+it_b_pay: "30m",
+notify_url: "http://washop.turuitech.com/mobile/api/payment/alipay/notify_url_app.php",
+out_trade_no: "860517400161500016",
+partner: "2088221170150694",
+payment_type: "1",
+return_url: "m.alipay.com",
+seller_id: "serve@swxiangge.com",
+service: "mobile.securitypay.pay",
+subject: "秀济源",
+total_fee: "0.01",
+sign: "abdmOBrexRi6ogPpf4B2lXniccMbwxjnwY6qFUW7nSRehEp3soUDdW5b6AvxcaJ8mrcQUVoHoCcN7TZH5IoQVRzEqQc3lJ8LnbFRMXXGtGE28Y/u8fpXlCMRMwXdWw6vTtiSTo+dEolMHZ6xe/BQ/lQm/TPnQ/TxTfChJbaOmMg=",
+sign_type: "RSA"
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_pay&op=alipay_pay"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_pay&op=alipay_pay";  
+form1.submit(); 
+} 
+</script>
+</html>

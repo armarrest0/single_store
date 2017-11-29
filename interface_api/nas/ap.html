@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>广告位获取
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>Get
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td>
+               <span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数ap_id
+                </td>
+                <td style='line-height: 25px;'>
+                    广告位id
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+    code: 200,
+    data: {
+    ap_id: "23",
+    ap_name: "认证页-创业-轮播3",
+    ap_intro: "创业",
+    ap_class: "0",
+    ap_display: "1",
+    is_use: "1",
+    ap_width: "640",
+    ap_height: "350",
+    ap_price: "0",
+    adv_num: "8",
+    click_num: "0",
+    default_content: "http://localhost/data/upload/shop/adv/04835706848401940.jpg",
+    nas_id: "7",
+    position: "轮播3",
+    adv_list: [
+    	{
+            adv_id: "111",
+            ap_id: "23",
+            adv_title: "宁波创业周末｜创客版 火热报名中～",
+            adv_content: "a:2:{s:7:"adv_pic";s:21:"04904594713441916.jpg";s:11:"adv_pic_url";s:55:"m.5iningbo.com/wap/tmpl/article_show.html?article_id=97";}",
+            adv_start_date: "1437062400",
+            adv_end_date: "1767110400",
+            slide_sort: "0",
+            member_id: "0",
+            member_name: "",
+            click_num: "0",
+            is_allow: "1",
+            buy_style: "",
+            goldpay: "0",
+            adv_pic: "http://localhost/data/upload/shop/adv/04904594713441916.jpg",
+            adv_pic_url: "m.5iningbo.com/wap/tmpl/article_show.html?article_id=97"
+        },
+    ]
+	
+    }
+}
+
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=adv&op=adv_api&ap_id=35"; 
+
+</script>
+
+</html>

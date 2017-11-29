@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>我的兑换记录
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>POST
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数
+                </td>
+                <td style='line-height: 25px;'>   
+                   key 登录令牌 state 积分订单状态 (20:已兑换并扣除积分;30:已发货;40:已收货;50已完成;2已取消) page 每页数量 curpage 当前页码
+                </td>
+            </tr>
+            
+             <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">     
+                         key:<input type="text" name="key" value="" />
+                         state:<input type="text" name="state" value="" />
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+hasmore: false,
+page_total: 2,
+datas: {
+points_order_list: [
+{
+point_orderid: "8",
+point_ordersn: "940519214620984010",
+point_buyerid: "10",
+point_buyername: "13867863731",
+point_buyeremail: "ZPUmPW@qq.com",
+point_addtime: "1465870620",
+point_shippingtime: null,
+point_shippingcode: null,
+point_shipping_ecode: null,
+point_finnshedtime: null,
+point_allpoint: "36",
+point_ordermessage: "",
+point_orderstate: "20",
+point_orderstatetext: "待发货",
+point_orderstatesign: "waitship",
+point_orderallowship: true,
+point_orderalloweditship: false,
+point_orderallowcancel: true,
+point_orderallowdelete: false,
+point_orderallowreceiving: false,
+prodlist: [
+{
+point_recid: "11",
+point_orderid: "8",
+point_goodsid: "6",
+point_goodsname: "书包",
+point_goodspoints: "20",
+point_goodsnum: "1",
+point_goodsimage: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif",
+point_goodsimage_old: "05048078851967177.jpg",
+point_goodsimage_small: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif"
+},
+{
+point_recid: "12",
+point_orderid: "8",
+point_goodsid: "7",
+point_goodsname: "剃须刀",
+point_goodspoints: "15",
+point_goodsnum: "1",
+point_goodsimage: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif",
+point_goodsimage_old: "05048079168239285.jpg",
+point_goodsimage_small: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif"
+},
+{
+point_recid: "13",
+point_orderid: "8",
+point_goodsid: "9",
+point_goodsname: "变形金刚",
+point_goodspoints: "1",
+point_goodsnum: "1",
+point_goodsimage: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif",
+point_goodsimage_old: "05121342745321195.jpg",
+point_goodsimage_small: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif"
+}
+]
+},
+}
+}
+
+
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_index&op=point_list"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_index&op=point_list"; 
+form1.submit(); 
+} 
+</script> 
+
+</html>

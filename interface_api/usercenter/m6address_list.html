@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>m6门店或智能柜接口
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>get
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+           address_type    类型 1智能柜 2门店
+           storebox_id    门店或智能柜ID
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">
+                         <input name="address_type"/>
+                       storebox_id  <input name ="storebox_id" />
+                         <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+ {
+    code: 200,
+        datas: {
+        area_list: [
+        {
+            id: "563",
+            storeid_boxid: "1",
+            name: "宁兴城市花园自提柜",
+            address_info: "（嵩江中路501号游泳池旁）",
+            tel: "",
+            city: "180",
+            district: "0",
+            longitude: "29.838249",
+            latitude: "121.561203",
+            remark: "（嵩江中路501号游泳池旁）",
+            stat: "1",
+            address_type: "1"
+          },
+          {
+            id: "564",
+            storeid_boxid: "3",
+            name: "鄞州商务大厦自提柜",
+            address_info: "（惠风东路257号一楼）",
+            tel: "",
+            city: "180",
+            district: "0",
+            longitude: "29.822137",
+            latitude: "121.557848",
+            remark: "（惠风东路257号一楼）",
+            stat: "1",
+            address_type: "1"
+          },
+          {
+            id: "565",
+            storeid_boxid: "4",
+            name: "国土资源局自提柜（和济街9号二楼食堂）",
+            address_info: "（和济街9号二楼食堂）",
+            tel: "",
+            city: "180",
+            district: "0",
+            longitude: "29.874967",
+            latitude: "121.616687",
+            remark: "（和济街9号二楼食堂）",
+            stat: "1",
+            address_type: "1"
+          },
+          {
+            id: "566",
+            storeid_boxid: "5",
+            name: "交通银行自提柜（中山东路55号地下车库）",
+            address_info: "（中山东路55号地下车库）",
+            tel: "",
+            city: "180",
+            district: "0",
+            longitude: "29.879187",
+            latitude: "121.557377",
+            remark: "（中山东路55号地下车库）",
+            stat: "1",
+            address_type: "1"
+          },
+          {
+            id: "567",
+            storeid_boxid: "8",
+            name: "浙江医药高等专科学校自提柜",
+            address_info: "1",
+            tel: "",
+            city: "180",
+            district: "0",
+            longitude: "121.552692",
+            latitude: "29.81521216",
+            remark: "1",
+            stat: "1",
+            address_type: "1"
+          }
+          ]
+        }
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=index&op=m6address_list"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=index&op=m6address_list";  
+form1.submit(); 
+} 
+</script> 
+
+</html>

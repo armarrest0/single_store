@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>收藏列表
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                   key 当前登录令牌
+                   goods_id 商品id
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self">
+                        <input id="key" name="key" />
+                        <input id="goods_id" name="goods_id" />
+                        <input type="submit" value="提交" />
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+hasmore: false,
+page_total: 1,
+datas: {
+favorites_list: [
+{
+goods_id: "7",                                                  //商品id
+goods_name: "博洋家纺斑斓格空调被",                              //商品名称
+goods_price: "139.00",                                          //商品价格
+goods_image: "2015/06/30/5_04889871203967126.jpg",              //商品大图
+store_id: "5",                                                  //商家ID
+fav_id: "7",                                                    //收藏记录id
+goods_image_url: "http://m.5iningbo.com/data/upload/shop/store/goods/5/2015/06/30/5_04889871203967126_240.jpg"  //列表小图路径
+}
+]
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_favorites&op=favorites_good"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_favorites&op=favorites_good";  
+form1.submit(); 
+} 
+</script>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>登录
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>post
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数name
+                </td>
+                <td style='line-height: 25px;'>
+                    username  用户名   password 密码 
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self">
+                        用户名<input id="username" name="username" />                       
+                        密码<input id="password" name="password" />
+                        <input type="submit" value="提交"  onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+status: 1,
+member_info: {
+id: "2",
+username: "13165938931",
+password: "90268c6b0c433ff874c6059d371de6a7",
+group_id: "1",
+encrypt: "DFCYLc",
+email: "4533513076@qq.com",
+integral: "0",
+money: "0.00",
+mobile: "13165938931",
+register_time: "1510883924",
+register_ip: "0.0.0.0",
+login_time: "1510884040",
+login_ip: "0.0.0.0",
+login_num: "2",
+islock: "0",
+frozen_money: "0.00",
+exp: "0",
+emailstatus: "0",
+mobilestatus: "0",
+weixin_open: ""
+}
+}
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=login&a=ajax_login"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=login&a=ajax_login";  
+form1.submit(); 
+} 
+</script> 
+
+</html>

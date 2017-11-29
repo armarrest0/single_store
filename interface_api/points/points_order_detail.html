@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>兑换订单详情
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>POST
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数
+                </td>
+                <td style='line-height: 25px;'>   
+                   key 登录令牌 order_id 兑换订单ID
+                </td>
+            </tr>
+            
+             <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">     
+                        key:<input type="text" name="key" value="" />
+                        order_id:<input type="text" name="order_id" value="" />
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+datas: {
+order_info: {
+point_orderid: "7",
+point_ordersn: "690519214576964010",
+point_buyerid: "10",
+point_buyername: "13867863731",
+point_buyeremail: "ZPUmPW@qq.com",
+point_addtime: "1465870576",
+point_shippingtime: null,
+point_shippingcode: null,
+point_shipping_ecode: null,
+point_finnshedtime: null,
+point_allpoint: "1",
+point_ordermessage: "",
+point_orderstate: "20",
+point_orderstatetext: "待发货",
+point_orderstatesign: "waitship",
+point_orderallowship: true,
+point_orderalloweditship: false,
+point_orderallowcancel: true,
+point_orderallowdelete: false,
+point_orderallowreceiving: false,
+pointorderstate_arr: {
+canceled: [
+2,
+"已取消"
+],
+waitship: [
+20,
+"待发货"
+],
+waitreceiving: [
+30,
+"待收货"
+],
+finished: [
+40,
+"已完成"
+]
+},
+orderaddress_info: {
+point_oaid: "7",
+point_orderid: "7",
+point_truename: "fsd",
+point_areaid: "1149",
+point_areainfo: "河北省	唐山市	丰南区",
+point_address: "fasdfasd",
+point_zipcode: "",
+point_telphone: "",
+point_mobphone: "11111111111"
+},
+prod_list: [
+{
+point_recid: "10",
+point_orderid: "7",
+point_goodsid: "9",
+point_goodsname: "变形金刚",
+point_goodspoints: "1",
+point_goodsnum: "1",
+point_goodsimage: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif",
+point_goodsimage_old: "05121342745321195.jpg",
+point_goodsimage_small: "http://localhost:18012/data/upload/shop/common/default_goods_image_240.gif"
+}
+],
+express_info: {
+id: "44",
+e_name: "中通快递",
+e_code: "zhongtong",
+e_letter: "Z",
+e_order: "1",
+e_url: "http://www.zto.cn",
+e_zt_state: "0",
+detail: [
+{
+time: "2016-06-04 19:15:15",
+content: "宁波陈婆渡 的派件已签收，感谢您使用中通快递！"
+},
+{
+time: "2016-06-04 13:00:27",
+content: "宁波陈婆渡 的 娄强15988642595 正在派件( 电话：15988642595)"
+},
+{
+time: "2016-06-04 12:56:03",
+content: "快件已到达 宁波陈婆渡( 电话：0574-89066009)"
+},
+{
+time: "2016-06-04 09:35:41",
+content: "快件已从 宁波 发出( 电话：0574-880147560574-880146360574-88012424 )"
+},
+{
+time: "2016-06-04 08:07:26",
+content: "快件已从 宁波市 发出( 电话：0574-82836951)"
+},
+{
+time: "2016-06-04 08:06:51",
+content: "快件已到达 宁波市( 电话：0574-82836951)"
+},
+{
+time: "2016-06-03 22:05:58",
+content: "快件已从 合肥市 发出( 电话：0551-636885010551-636885020551-63688509 )"
+},
+{
+time: "2016-06-03 21:20:23",
+content: "快件已到达 合肥市( 电话：0551-636885010551-636885020551-63688509 )"
+},
+{
+time: "2016-06-03 19:39:39",
+content: "快件已从 合肥蜀山四部 发出( 电话：0551-651812690551-65181256 )"
+},
+{
+time: "2016-06-03 18:04:15",
+content: "合肥蜀山四部 的 专注爱 已收件"
+}
+]
+}
+}
+}
+}
+
+                     </pre>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_index&op=order_info"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_index&op=order_info"; 
+form1.submit(); 
+} 
+</script> 
+
+</html>

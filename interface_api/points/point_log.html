@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+    <title></title>
+    <link href="../list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
+            <tr class="addtop">
+                <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
+                    colspan='2'>积分历史查询
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>请求方式
+                </td>
+                <td>POST
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>url地址
+                </td>
+                <td><span id="url_text"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>参数phone
+                </td>
+                <td style='line-height: 25px;'>
+                  key 当前登录令牌 
+                  积分方式state： 1(爱宁波连接) 2(wifi测速) 3(阿拉淘消费) 4(分享文章/商品)
+                  stime：查询开始时间
+                  etime：查询结束时间
+                  description：积分增加项目
+				  curpage：当前分页
+                </td>
+            </tr>
+            
+             <tr>
+                <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
+                </td>
+                <td>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">
+                        key：<input id="key" name="key" />
+                        state：<input id="state" name="state" />   
+                        stime： <input id="stime" name="stime" value="2016-01-20"/>     
+                        etime： <input id="etime" name="etime" value="2016-01-27"/>    
+                        description : <input id="description" name="description" value="爱宁波连接"/>           				curpage： <input id="curpage" name="curpage" value=""/>   
+                        <input type="submit" value="提交" onClick="subform();"/>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='height: 25px;' class='tdbgleft'>返回参数
+                </td>
+                <td style='line-height: 25px;'>
+                     <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
+{
+code: 200,
+hasmore: true,
+page_total: 3,
+datas: {
+points_list: {
+months: [
+"2016-02",
+"2016-01",
+"2015-12",
+"2015-11",
+"2015-10",
+"2015-09",
+"2015-08",
+"2015-07",
+"2015-06",
+"2015-05",
+"2015-04",
+"2015-03",
+"2015-02",
+"2015-01"
+],
+points: [
+{
+pl_id: "1249",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1453793062",
+pl_desc: "分享文章/商品",
+pl_stage: "4",
+con_id: "2",
+content: "http://localhost:18012/api/points/point_add.html",
+month: "2016-01",
+date: "2016/01/26",
+type: "add"
+},
+{
+pl_id: "1282",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1451577600",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2016-01",
+date: "2016/01/01",
+type: "add"
+},
+{
+pl_id: "1287",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "-1",
+pl_addtime: "1451577600",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2016-01",
+date: "2016/01/01",
+type: "minus"
+},
+{
+pl_id: "1266",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1448899200",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2015-12",
+date: "2015/12/01",
+type: "add"
+},
+{
+pl_id: "1270",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1448899200",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2015-12",
+date: "2015/12/01",
+type: "add"
+},
+{
+pl_id: "1247",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1446307200",
+pl_desc: "阿拉淘消费",
+pl_stage: "3",
+con_id: "1",
+content: null,
+month: "2015-11",
+date: "2015/11/01",
+type: "add"
+},
+{
+pl_id: "1248",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1446307200",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: null,
+month: "2015-11",
+date: "2015/11/01",
+type: "add"
+},
+{
+pl_id: "1253",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1443628800",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2015-10",
+date: "2015/10/01",
+type: "add"
+},
+{
+pl_id: "1255",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1443628800",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2015-10",
+date: "2015/10/01",
+type: "add"
+},
+{
+pl_id: "1259",
+pl_memberid: "37",
+pl_membername: "1",
+pl_adminid: null,
+pl_adminname: null,
+pl_points: "+1",
+pl_addtime: "1443628800",
+pl_desc: "爱宁波连接",
+pl_stage: "1",
+con_id: "1",
+content: "1",
+month: "2015-10",
+date: "2015/10/01",
+type: "add"
+}
+]
+},
+user: {
+member_id: "37",
+member_name: "1",
+member_truename: null,
+member_avatar: "avatar_37.jpg",
+member_sex: null,
+member_birthday: null,
+member_passwd: "c4ca4238a0b923820dcc509a6f75849b",
+member_paypwd: null,
+member_email: "1@1.1",
+member_email_bind: "0",
+member_mobile: null,
+member_mobile_bind: "0",
+member_qq: null,
+member_ww: null,
+member_login_num: "1",
+member_time: "1432286067",
+member_login_time: "1432286067",
+member_old_login_time: "1432286067",
+member_login_ip: "123.137.91.191",
+member_old_login_ip: "123.137.91.191",
+member_qqopenid: null,
+member_qqinfo: null,
+member_sinaopenid: null,
+member_sinainfo: null,
+member_points: "20",
+available_predeposit: "0.00",
+freeze_predeposit: "0.00",
+available_rc_balance: "0.00",
+freeze_rc_balance: "0.00",
+inform_allow: "1",
+is_buy: "1",
+is_allowtalk: "1",
+member_state: "1",
+member_snsvisitnum: "0",
+member_areaid: null,
+member_cityid: null,
+member_provinceid: null,
+member_areainfo: null,
+member_privacy: null,
+member_quicklink: null,
+member_exppoints: "0",
+card_num: null,
+clinic_num: null,
+address: null,
+client_type: "ios",
+store_id: null
+},
+first_time: "2015年01月",
+curpage: 1,
+flag: true
+}
+}
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script language="JavaScript" > 
+
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_index&op=points_log"; 
+
+function subform(){ 
+document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_index&op=points_log";  
+form1.submit(); 
+} 
+</script> 
+
+</html>
