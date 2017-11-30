@@ -36,6 +36,7 @@ class order_control extends init_control {
         $setting = $this->load->service('admin/setting')->get();
         $pages  = pages($count,$limit);
         $SEO = seo('我的订单 - 会员中心');
+ 
         $this->load->librarys('View')->assign('setting',$setting)->assign('orders',$orders)->assign('SEO',$SEO)->assign('pages',$pages)->display('my_order');
     }
 

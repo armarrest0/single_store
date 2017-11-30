@@ -303,5 +303,91 @@ class public_control extends init_control
                     
 		}
     }
+    
+    
+       /**
+        * 用户订单列表
+        */
+       public function ajax_order_list()
+       {
+           // 查询条件
+            $sqlmap = array();
+            $sqlmap['buyer_id'] = $this->member['id'];
+            if (isset($_GET['sn'])) $sqlmap['sn'] = array('LIKE','%'.$_GET['sn'].'%');
+            if (!isset($_GET['type'])) $sqlmap['status'] = array('IN','1,2');
+            $limit  = (isset($_GET['limit'])) ? $_GET['limit'] : 5;
+            $orders = $this->load->service('order/order')->fetch($sqlmap, $limit, $_GET['page'], 'id DESC');                   
+            echo json_encode(array("status"=>1,"datas"=>$orders));   
+       }
         
+       
+       /**
+        * 用户订单详情
+        */
+       public function ajax_order_info()
+       {
+            $o_d_id = remove_xss($_POST['delivery_id']);
+            $detail = $this->load->service('order/order_sub')->sub_detail($_POST['sub_sn'] ,$o_d_id);
+            if($detail){
+                //更新跟踪物流
+                if($detail['delivery_status'] > 0 && $o_d_id > 0){
+                    $this->load->service('order/order_track')->update_api100($detail['sub_sn'],$o_d_id);
+                    $detail = $this->load->service('order/order_sub')->sub_detail($_POST['sub_sn'] ,$o_d_id);
+                }
+                $detail['_member'] = $this->load->table('member/member')->find($detail['buyer_id']);
+                $detail['_main'] = $this->load->service('order/order')->member_table_detail($detail['order_sn']);
+                // 是否显示子订单号信息
+                $detail['_showsubs'] = (count($detail['_main']['_subs']) > 1) ? TRUE : FALSE;
+
+                echo json_encode(array("status"=>1,"datas"=>$detail));   
+            }else{
+                 echo json_encode(array("status"=>0,"message"=>"输入参数有误"));  
+            }
+            
+          
+       }
+       
+       
+       /**
+        * 用户订单取消
+        */
+       public function ajax_order_cancel()
+       {                    
+            $sub_sn = remove_xss($_POST['sub_sn']);
+            $order = $this->load->service('order/order_sub')->find(array('sub_sn' => $sub_sn), 'buyer_id,order_sn');
+            if ($order['buyer_id'] != $this->member['id']) echo json_encode(array("status"=>0,"message"=>"操作失败"));  
+            $result = $this->load->service('order/order_sub')->set_order($sub_sn ,$action = 'order',$status = 2 ,array('msg'=>'用户取消订单','isrefund' => 1));
+
+            model('order/order_trade')->where(array('order_sn'=>$order['order_sn']))->setField('status',-1);
+            
+            if($result){
+                echo json_encode(array("status"=>1,"message"=>"操作成功"));   
+            }else{
+                echo json_encode(array("status"=>0,"message"=>"操作失败"));   
+            }
+
+       }
+       
+       
+       /**
+        * 用户订单确认收货
+        */
+       public function ajax_order_finish()
+       {                    
+            $sub_sn = remove_xss($_POST['sub_sn']);
+            $order = $this->load->service('order/order_sub')->find(array('sub_sn' => $sub_sn), 'buyer_id');
+            if ($order['buyer_id'] != $this->member['id']) echo json_encode(array("status"=>0,"message"=>"操作失败"));  
+            $data = array();
+            $data['msg'] = '确认订单商品收货';
+            $data['o_delivery_id'] = remove_xss($_POST['delivery_id']);
+            $result = $this->load->service('order/order_sub')->set_order($sub_sn ,'finish',1 ,$data);
+            
+            if($result){
+                echo json_encode(array("status"=>1,"message"=>"操作成功"));   
+            }else{
+                echo json_encode(array("status"=>0,"message"=>"操作失败"));   
+            }
+          
+       }
+       
 }

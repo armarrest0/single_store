@@ -39,7 +39,7 @@
                 <td>
                     <form  id = "form1"   name = "form1"   method = "post"  target="_self">
                         KEY:<input id="key" name="key" />
-                        订单编号:<input id="order_id " name="order_id " />
+                        子订单编号:<input id="sub_sn" name="sub_sn" />
                         <input type="submit" value="提交" onClick="subform();"/>
                     </form>
                 </td>
@@ -50,7 +50,10 @@
                 </td>
                 <td style='line-height: 25px;'>
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
-1 成功
+{
+status: 1,
+message: "操作成功"
+}
                      </pre>
                 </td>
 
@@ -61,10 +64,10 @@
 
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_cancel"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_cancel"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_cancel";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_cancel";  
 form1.submit(); 
 } 
 </script>

@@ -30,8 +30,7 @@
                 </td>
                 <td style='line-height: 25px;'>
                    key 当前登录令牌
-                   order_state 当前状态
-                   m6_version=1 M6版本标记
+              
                 </td>
             </tr>
             
@@ -41,8 +40,6 @@
                 <td>
                     <form  id = "form1"   name = "form1"   method = "post"  target="_self">
                         KEY:<input id="key" name="key" />
-						订单状态：<input id="order_state" name="order_state" />
-                                               m6_version<input id="order_state" name="m6_version" value="1"/>
                         <input type="submit" value="提交" onClick="subform();" />
                     </form>
                 </td>
@@ -53,39 +50,302 @@
                 </td>
                 <td style='line-height: 25px;'>
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
-order_group_list
-    order_list 订单列表
-        order_id 订单id
-        order_sn 订单sn
-        store_name 店铺名称
-        goods_amount 商品总价
-        order_amount 订单总价
-        pd_amount 预存款支付总价
-        shipping_fee 运费
-        state_desc 状态文字
-        payment_name 支付方式文字
-        if_cancel 是否显示取消按钮 true/false
-        if_receive 是否显示确认收货按钮 true/false
-        if_lock 是否显示锁定中状态 true/false
-        if_deliver 是否显示查看物流按钮 true/false
-	if_refund_cancel:  是否显示退款按钮 true/false
-	refund:  发货后是否显示退款按钮 1/0
-        extend_order_goods 订单商品列表
-            goods_name 商品名称
-            goods_price 商品价格
-            goods_num 商品购买数量
-            goods_image_url 商品图片地址
-    pay_amount 支付总额，该字段存在且大于0时显示支付按钮
-    add_time 订单提交时间
-    pay_sn 支付编号
-
-
-订单状态
-0-已取消
-10-未支付
-20-已支付
-30-已发货
-40-交易成功
+[
+{
+id: "1",
+sn: "20171114142231559857",
+buyer_id: "1",
+seller_ids: "0",
+source: "1",
+pay_type: "1",
+sku_amount: "1.00",
+delivery_amount: "1.00",
+real_amount: "2.00",
+paid_amount: "2.00",
+balance_amount: "2.00",
+pay_method: "余额支付",
+pay_sn: "",
+address_name: "牛仔裤",
+address_mobile: "13165938931",
+address_detail: "中国大陆 天津 天津 河北 建昌道街道 天啦路类1231",
+invoice_tax: "0.00",
+invoice_title: "",
+invoice_content: "",
+status: "1",
+pay_status: "1",
+confirm_status: "2",
+delivery_status: "2",
+finish_status: "2",
+pay_time: "1510640557",
+system_time: "1510640551",
+promot_amount: "0.00",
+address_district_ids: "100000,120000,120100,120105,120105006,",
+_status: {
+now: "all_finish",
+wait: "all_finish",
+wait_ch: "已完成"
+},
+_pay_type: "在线支付",
+_subs: [
+{
+id: "1",
+order_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+pay_type: "1",
+buyer_id: "1",
+seller_id: "0",
+delivery_name: "",
+sku_price: "1.00",
+delivery_price: "1.00",
+real_price: "2.00",
+status: "1",
+pay_status: "1",
+confirm_status: "2",
+delivery_status: "2",
+finish_status: "2",
+pay_time: "1510640557",
+confirm_time: "1510640617",
+delivery_time: "1510640690",
+finish_time: "1510640766",
+system_time: "1510640551",
+remark: "",
+promotion: null,
+_status: {
+now: "all_finish",
+wait: "all_finish",
+wait_ch: "已完成"
+},
+_track: [
+{
+id: "12",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640767",
+msg: "感谢您在单店购物，欢迎您的再次光临",
+add_time: "1510640767",
+clientip: "0.0.0.0"
+},
+{
+id: "11",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510126465",
+msg: "已签收,感谢使用顺丰,期待再次为您服务",
+add_time: "1510640698",
+clientip: "0.0.0.0"
+},
+{
+id: "10",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510122231",
+msg: "快件交给袁勇峰，正在派送途中（联系电话：18357406120）",
+add_time: "1510640698",
+clientip: "0.0.0.0"
+},
+{
+id: "9",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510120305",
+msg: "快件到达 【宁波市鄞州区学府一号营业点】",
+add_time: "1510640698",
+clientip: "0.0.0.0"
+},
+{
+id: "8",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510117386",
+msg: "快件在【宁波鄞州集散中心2】装车，已发往下一站",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "7",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510110625",
+msg: "快件到达 【宁波鄞州集散中心2】",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "6",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510106019",
+msg: "快件在【宁波市北仑区四方家园营业点】装车，已发往下一站",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "5",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510099809",
+msg: "顺丰速运 已收取快件",
+add_time: "1510640697",
+clientip: "0.0.0.0"
+},
+{
+id: "4",
+delivery_id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640690",
+msg: "您的订单配货完毕，已经发货。快递单号：367929040291",
+add_time: "1510640690",
+clientip: "0.0.0.0"
+},
+{
+id: "3",
+delivery_id: "0",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640617",
+msg: "您的订单已确认，正在配货",
+add_time: "1510640617",
+clientip: "0.0.0.0"
+},
+{
+id: "2",
+delivery_id: "0",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640557",
+msg: "您的订单已付款，请等待系统确认",
+add_time: "1510640557",
+clientip: "0.0.0.0"
+},
+{
+id: "1",
+delivery_id: "0",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+time: "1510640552",
+msg: "您提交了订单，系统正在等待付款",
+add_time: "1510640552",
+clientip: "0.0.0.0"
+}
+],
+_skus: [
+{
+id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+buyer_id: "1",
+seller_id: "0",
+spu_id: "1",
+sku_id: "2",
+sku_thumb: "./uploadfile/goods/bc/c5/66/77/5a0a867467b6d.jpg",
+sku_barcode: "",
+sku_name: "牛仔裤",
+sku_spec: [
+{
+id: "1",
+name: "牛仔裤",
+value: "服装",
+style: "0",
+color: "",
+img: ""
+}
+],
+sku_price: "1.00",
+sku_edition: "4",
+sku_info: "{"sku_thumb":".\/uploadfile\/goods\/bc\/c5\/66\/77\/5a0a867467b6d.jpg","sku_barcode":"","sku_name":"\u725b\u4ed4\u88e4","sku_spec":"[{\"id\":\"1\",\"name\":\"\u725b\u4ed4\u88e4\",\"value\":\"\u670d\u88c5\",\"style\":\"0\",\"color\":\"\",\"img\":\"\"}]","sku_price":"1.00","real_price":"1.00","content":"","img_list":"null"}",
+real_price: "1.00",
+buy_nums: "1",
+return_id: "0",
+refund_id: "0",
+delivery_id: "1",
+delivery_status: "2",
+iscomment: "1",
+dateline: "1510640552",
+promotion: null,
+is_give: "0",
+delivery_template_id: "0",
+_sku_spec: "牛仔裤：服装 ",
+_sku_url: "/index.php?m=goods&c=index&a=detail&sku_id=2",
+url: "/index.php?m=goods&c=index&a=detail&sku_id=2"
+}
+],
+_group: {
+1: {
+lists: [
+{
+id: "1",
+order_sn: "20171114142231559857",
+sub_sn: "20171114551015710149",
+buyer_id: "1",
+seller_id: "0",
+spu_id: "1",
+sku_id: "2",
+sku_thumb: "./uploadfile/goods/bc/c5/66/77/5a0a867467b6d.jpg",
+sku_barcode: "",
+sku_name: "牛仔裤",
+sku_spec: [
+{
+id: "1",
+name: "牛仔裤",
+value: "服装",
+style: "0",
+color: "",
+img: ""
+}
+],
+sku_price: "1.00",
+sku_edition: "4",
+sku_info: "{"sku_thumb":".\/uploadfile\/goods\/bc\/c5\/66\/77\/5a0a867467b6d.jpg","sku_barcode":"","sku_name":"\u725b\u4ed4\u88e4","sku_spec":"[{\"id\":\"1\",\"name\":\"\u725b\u4ed4\u88e4\",\"value\":\"\u670d\u88c5\",\"style\":\"0\",\"color\":\"\",\"img\":\"\"}]","sku_price":"1.00","real_price":"1.00","content":"","img_list":"null"}",
+real_price: "1.00",
+buy_nums: "1",
+return_id: "0",
+refund_id: "0",
+delivery_id: "1",
+delivery_status: "2",
+iscomment: "1",
+dateline: "1510640552",
+promotion: null,
+is_give: "0",
+delivery_template_id: "0",
+_sku_spec: "牛仔裤：服装 ",
+_sku_url: "/index.php?m=goods&c=index&a=detail&sku_id=2",
+url: "/index.php?m=goods&c=index&a=detail&sku_id=2"
+}
+],
+total_amount: "1.00",
+delivery: {
+id: "1",
+o_sku_ids: "1",
+sub_sn: "20171114551015710149",
+delivery_id: "1",
+delivery_name: "顺丰快递",
+delivery_sn: "367929040291",
+delivery_time: "1510640690",
+isreceive: "1",
+receive_time: "1510640766",
+print_time: "0"
+},
+_status: "all_finish"
+}
+}
+}
+],
+_buyer: {
+username: "13867863731"
+},
+_showsubs: false
+}
+]
                      </pre>
                 </td>
 
@@ -97,10 +357,10 @@ order_group_list
 
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_list"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_list"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_order&op=order_list";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_list";  
 form1.submit(); 
 } 
 </script>
