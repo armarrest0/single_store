@@ -611,5 +611,23 @@ class member_control extends init_control
                     
 		}
     }
+    
+    
+        /**
+	*	商品收藏
+	*/
+        public function ajax_favorite_add() {       
+            
+                $sku_id = (int) $_POST['sku_id'];
+		
+		$result = $this->load->service('member/member_favorite')->set_mid($this->member['id'])->add($sku_id);
+		if($result){
+                     echo json_encode(array("status"=>1,"message"=>"收藏成功")); 
+                }else{
+                     echo json_encode(array("status"=>0,"message"=>"收藏失败")); 
+                }
+            
+        }
+    
         
 }

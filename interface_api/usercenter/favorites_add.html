@@ -29,7 +29,7 @@
                 <td style='height: 25px;' class='tdbgleft'>参数name
                 </td>
                 <td style='line-height: 25px;'>
-                   key 当前登录令牌 goods_id 商品编号
+                   key 当前登录令牌 sku_id 商品编号
                     
                 </td>
             </tr>
@@ -40,7 +40,7 @@
                 <td>
                     <form  id = "form1"   name = "form1"   method = "post"  target="_self">
                         KEY:<input id="key" name="key" />
-                        商品ID:<input id="goods_id" name="goods_id" />
+                        商品ID:<input id="sku_id" name="sku_id" />
                         <input type="submit" value="提交"  onClick="subform();"/>
                     </form>
                 </td>
@@ -51,7 +51,10 @@
                 </td>
                 <td style='line-height: 25px;'>
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
-'1' 保存成功
+{
+status: 1,
+message: "收藏成功"
+}
                      </pre>
                 </td>
 
@@ -62,10 +65,10 @@
 
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_favorites&op=favorites_add"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_favorite_add"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_favorites&op=favorites_add";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_favorite_add";  
 form1.submit(); 
 } 
 </script>
