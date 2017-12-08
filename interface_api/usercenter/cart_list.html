@@ -29,8 +29,7 @@
                 <td style='height: 25px;' class='tdbgleft'>参数name
                 </td>
                 <td style='line-height: 25px;'>
-                   key 当前登录令牌
-                   cart_type  购物车类型  1为M6菜篮子 不填或0为普通购物车
+                   key 当前登录令牌                 
                 </td>
             </tr>
             
@@ -39,8 +38,7 @@
                 </td>
                 <td>
                     <form  id = "form1"   name = "form1"   method = "post" target="_self">
-                        <input id="key" name="key" />
-                         <input id="key" name="cart_type" />
+                        key<input id="key" name="key" />
                         <input type="submit" value="提交" onclick="subform();"/>
                     </form>
                 </td>
@@ -51,24 +49,78 @@
                 </td>
                 <td style='line-height: 25px;'>
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
-cart_list
-    cart_id 购物车编号
-    buyer_id 买家member_id
-    store_id 店铺编号
-    store_name 店铺名称
-    goods_id 商品编号
-    goods_name 商品名称
-    goods_price 商品价格
-    goods_num 购买数量
-    goods_image_url 图片地址
-    goods_sum 商品总价
-
-    unit: "500",
-    units: "g",
-    show_m6_user_price_str: "现价：10.00/500g",
-    show_m6_vuser_price_str
-sum 购物车总价
-m6_vip 0或者''  1为V卡
+{
+status: 1,
+datas: {
+skus: [
+{
+sku_list: {
+3: {
+sku_id: "3",
+number: "8",
+_sku_: {
+id: "2",
+name: "测试商品2",
+subtitle: "",
+style: "",
+catid: "2",
+brand_id: "0",
+keyword: "",
+description: "",
+imgs: "",
+min_price: "1.00",
+max_price: "1.00",
+status: "1",
+specs: [ ],
+sku_total: "999",
+give_point: "-1",
+warn_number: "5",
+sort: "100",
+spec_id: "0",
+type_id: "0",
+weight: "0.00",
+volume: "0.00",
+delivery_template_id: "0",
+delivery_price: "0.00",
+delivery_type: "0",
+delivery_set_type: "0",
+sku_id: "3",
+spu_id: "2",
+sku_name: "测试商品2 ",
+sn: "NU151202773512-1",
+barcode: "",
+spec: "",
+thumb: "./uploadfile/goods/8d/d8/31/b9/5a1fb672ec01c.png",
+status_ext: "0",
+number: "999",
+market_price: "2.00",
+shop_price: "1.00",
+show_in_lists: "1",
+prom_type: "",
+prom_id: "0",
+up_time: "0",
+update_time: "0",
+edition: "1",
+url: "/index.php?m=goods&c=index&a=detail&sku_id=3",
+img_list: [
+"./uploadfile/goods/8d/d8/31/b9/5a1fb672ec01c.png"
+],
+prom_price: "1.00"
+},
+prices: "8.00"
+}
+},
+sub_prices: 8,
+sku_price: 8,
+sub_numbers: 8
+}
+],
+all_prices: "8.00",
+sku_numbers: 8,
+sku_counts: 1,
+sold_count: 0
+}
+}
                      </pre>
                 </td>
 
@@ -79,10 +131,10 @@ m6_vip 0或者''  1为V卡
 
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_cart&op=cart_list"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_cart_lists"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_cart&op=cart_list";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_cart_lists";  
 form1.submit(); 
 } 
 </script>

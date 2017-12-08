@@ -10,7 +10,7 @@
         <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
             <tr class="addtop">
                 <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
-                    colspan='2'>地区列表
+                    colspan='2'>购物车结算
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,9 @@
                 <td style='height: 25px;' class='tdbgleft'>参数name
                 </td>
                 <td style='line-height: 25px;'>
-area_id 地区编号(为空时默认返回一级分类)
+                  key 当前登录令牌
+sku_ids 购物车商品IDs (如：1;2;3)
+district_id 收货地址ID (不填取用户默认收货地址)
                 </td>
             </tr>
             
@@ -37,9 +39,11 @@ area_id 地区编号(为空时默认返回一级分类)
                 <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
                 </td>
                 <td>
-                    <form  id = "form1"   name = "form1"   method = "post" target="_self">             
-                        地区编号：<input id="area_id " name="area_id" />
-                         <input type="submit" value="提交" onClick="subform();"/>
+                    <form  id = "form1"   name = "form1"   method = "post" target="_self">
+                        key<input id="key" name="key" />
+                        购物车商品IDs<input id="sku_ids" name="sku_ids" />    
+                        收货地址ID<input id="district_id" name="district_id" />
+                        <input type="submit" value="提交" onclick="subform();" />
                     </form>
                 </td>
             </tr>
@@ -51,44 +55,7 @@ area_id 地区编号(为空时默认返回一级分类)
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
 {
 status: 1,
-datas: [
-{
-id: "820000",
-parent_id: "0",
-name: "澳门",
-zipcode: "0",
-pinyin: "",
-lng: "113.549088",
-lat: "22.198952",
-level: "1",
-sort: "33",
-location: "城市"
-},
-{
-id: "700000",
-parent_id: "0",
-name: "港台",
-zipcode: "0",
-pinyin: "",
-lng: "",
-lat: "",
-level: "0",
-sort: "50",
-location: "其它,城市,区县"
-},
-{
-id: "100000",
-parent_id: "0",
-name: "中国大陆",
-zipcode: "638500",
-pinyin: "zhongguodalu",
-lng: "",
-lat: "",
-level: "0",
-sort: "255",
-location: "省份,城市,区县,乡镇"
-}
-]
+message: "生成订单成功"
 }
                      </pre>
                 </td>
@@ -97,13 +64,15 @@ location: "省份,城市,区县,乡镇"
         </table>
     </div>
 </body>
+
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_district"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_cart_buy"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_district";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_cart_buy";  
 form1.submit(); 
 } 
 </script>
+
 </html>

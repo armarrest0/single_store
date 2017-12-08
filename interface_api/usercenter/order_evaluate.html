@@ -10,7 +10,7 @@
         <table width="99%" border="0" cellpadding="0" cellspacing="0" class="borders">
             <tr class="addtop">
                 <td style='font-weight: bolder; height: 25px; text-align: center; font-size: 14px;'
-                    colspan='2'>地区列表
+                    colspan='2'>订单评价
                 </td>
             </tr>
             <tr>
@@ -28,8 +28,12 @@
             <tr>
                 <td style='height: 25px;' class='tdbgleft'>参数name
                 </td>
-                <td style='line-height: 25px;'>
-area_id 地区编号(为空时默认返回一级分类)
+                <td style='line-height:  25px;'>
+                   key 当前登录令牌 
+                   mood 评价等级 (好评=>'positive',中评=>'neutral',差评=>'negative')
+                   tid 商品订单ID
+                   content 评价内容
+                   comment_pic 晒单图片
                 </td>
             </tr>
             
@@ -37,9 +41,13 @@ area_id 地区编号(为空时默认返回一级分类)
                 <td style='height: 25px; width: 75px;' class='tdbgleft'>测试
                 </td>
                 <td>
-                    <form  id = "form1"   name = "form1"   method = "post" target="_self">             
-                        地区编号：<input id="area_id " name="area_id" />
-                         <input type="submit" value="提交" onClick="subform();"/>
+                    <form  id = "form1"   name = "form1"   method = "post"  target="_self" enctype="multipart/form-data">
+                        KEY:<input id="key" name="key" />
+                        评价等级<input id="mood" name="mood" />
+                        商品订单ID<input id="tid" name="tid" />
+                        评价内容<input id="content" name="content" />
+                        晒单图片<input type="file" id="comment_pic" name="comment_pic" />                 
+                        <input type="submit" value="提交" onClick="subform();"/>
                     </form>
                 </td>
             </tr>
@@ -51,44 +59,7 @@ area_id 地区编号(为空时默认返回一级分类)
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
 {
 status: 1,
-datas: [
-{
-id: "820000",
-parent_id: "0",
-name: "澳门",
-zipcode: "0",
-pinyin: "",
-lng: "113.549088",
-lat: "22.198952",
-level: "1",
-sort: "33",
-location: "城市"
-},
-{
-id: "700000",
-parent_id: "0",
-name: "港台",
-zipcode: "0",
-pinyin: "",
-lng: "",
-lat: "",
-level: "0",
-sort: "50",
-location: "其它,城市,区县"
-},
-{
-id: "100000",
-parent_id: "0",
-name: "中国大陆",
-zipcode: "638500",
-pinyin: "zhongguodalu",
-lng: "",
-lat: "",
-level: "0",
-sort: "255",
-location: "省份,城市,区县,乡镇"
-}
-]
+message: "评价成功"
 }
                      </pre>
                 </td>
@@ -97,13 +68,15 @@ location: "省份,城市,区县,乡镇"
         </table>
     </div>
 </body>
+
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_district"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_order_evaluate"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_district";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_order_evaluate";  
 form1.submit(); 
 } 
 </script>
+
 </html>

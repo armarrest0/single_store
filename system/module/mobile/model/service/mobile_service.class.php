@@ -40,7 +40,7 @@ class mobile_service extends service {
         
         $where = array();
         $where['id'] = $result['member_id'];
-        $member_info = $this->model->where($where)->find();
+        $member_info = $this->model->setid($result['member_id'])->address()->group()->output();
 
         if(empty($member_info)) {
              echo json_encode(array('login' => '0','message'=>'请登录'));

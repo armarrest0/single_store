@@ -41,8 +41,6 @@ key 当前登陆令牌
                     <form  id = "form1"   name = "form1"   method = "post"  target="_self">
                         key<input id="key" name="key" />
 
-
-
                         <input type="submit" value="提交" onClick="subform();"/>
                     </form>
                 </td>
@@ -53,7 +51,37 @@ key 当前登陆令牌
                 </td>
                 <td style='line-height: 25px;'>
                      <pre style="word-wrap: break-word; white-space: pre-wrap; font-size: 12px; color: #222222;">
-payment_list 可用支付方式列表(wxpay-微信支付 alipay-支付宝移动支付)
+{
+status: 1,
+datas: [
+{
+pay_code: "wechat_js",
+pay_name: "微信手机支付",
+pay_fee: "",
+pay_desc: "微信手机支付是通过微信端下单并使用微信进行支付的移动支付方式 ，仅支持微信中使用。",
+enabled: "1",
+config: "a:4:{s:5:"appid";s:18:"wxc3bb62c98feb0c46";s:6:"mch_id";s:10:"1227106602";s:3:"key";s:32:"CD189082skckcdss2105051933300CDS";s:6:"secret";s:32:"e1c39297260e5f414aeba9de59f43c71";}",
+dateline: "1512630875",
+sort: "6",
+isonline: "1",
+applie: "wap",
+pay_ico: "wechat_js"
+},
+{
+pay_code: "ws_wap",
+pay_name: "支付宝手机支付",
+pay_fee: "",
+pay_desc: "手机网站支付主要应用于手机、掌上电脑等无线设备的网页上，通过网页跳转或浏览器自带的支付宝快捷支付实现买家付款的功能，资金即时到账。",
+enabled: "1",
+config: "a:3:{s:7:"account";s:19:"serve@swxiangge.com";s:7:"partner";s:16:"2088221170150694";s:3:"key";s:32:"ue3ap58b393w0dmqdjx0lojyss78bcba";}",
+dateline: "1511143181",
+sort: "4",
+isonline: "1",
+applie: "wap",
+pay_ico: "ws_wap"
+}
+]
+}
                      </pre>
                 </td>
 
@@ -63,10 +91,10 @@ payment_list 可用支付方式列表(wxpay-微信支付 alipay-支付宝移动�
 </body>
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/mobile/index.php?act=member_payment&op=payment_list"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_payment_list"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/mobile/index.php?act=member_payment&op=payment_list";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_payment_list";  
 form1.submit(); 
 } 
 </script>

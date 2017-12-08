@@ -29,7 +29,7 @@
                 <td style='height: 25px;' class='tdbgleft'>参数name
                 </td>
                 <td style='line-height: 25px;'>
-                        mid 用户ID  isdefault 是否默认
+                        key 当前登录令牌   isdefault 是否默认
                 </td>
             </tr>
             
@@ -38,7 +38,7 @@
                 </td>
                 <td>
                     <form  id = "form1"   name = "form1"   method = "post" target="_self">
-                       用户ID<input id="mid" name="mid" />
+                       KEY:<input id="key" name="key" />
                        是否默认<input id="isdefault" name="isdefault" />
                         <input type="submit" value="提交" onClick="subform();"/>
                     </form>
@@ -84,10 +84,10 @@ full_district: [
 </body>
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_member_address_list"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_member_address_list"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_member_address_list";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_member_address_list";  
 form1.submit(); 
 } 
 </script>

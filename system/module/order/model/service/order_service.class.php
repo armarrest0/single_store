@@ -189,8 +189,13 @@ class order_service extends service {
 				$this->error = lang('delivery_template_error','order/language');
 				return FALSE;
 			}
-			// 读取收货人信息
-			$member_address = $this->load->table("member/member_address")->where(array('id' => $_GET['address_id']))->find();
+                        if($_GET['address_id']){
+                            // 读取收货人信息
+                            $member_address = $this->load->table("member/member_address")->where(array('id' => $_GET['address_id']))->find();
+                        }else{
+                            $member_address = $this->load->table("member/member_address")->where(array('district_id' => $district_id))->find();
+                        }
+			
 			if (!$member_address) {
 				$this->error = lang('shipping_address_empty','order/language');
 				return FALSE;

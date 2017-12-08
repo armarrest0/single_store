@@ -29,7 +29,7 @@
                 <td style='height: 25px;' class='tdbgleft'>参数name
                 </td>
                 <td style='line-height:  25px;'>
-                   key 当前登录令牌   order_id 订单id     sub_sn 子订单编号
+                   key 当前登录令牌   delivery_id 运单ID     sub_sn 子订单编号
                 </td>
             </tr>
             
@@ -400,10 +400,10 @@ _showsubs: false
 
 <script language="JavaScript" > 
 
-document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_info"; 
+document.getElementById("url_text").innerText = "http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_order_info"; 
 
 function subform(){ 
-document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=public&a=ajax_order_info";  
+document.form1.action="http://"+window.location.host+"/index.php?m=mobile&c=member&a=ajax_order_info";  
 form1.submit(); 
 } 
 </script>
