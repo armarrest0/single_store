@@ -629,5 +629,53 @@ class member_control extends init_control
             
         }
     
+        /**
+	*	我的收藏列表
+	*/
+        public function ajax_get_favorite(){
+		$result  = $this->load->service('member/member_favorite')->set_mid($this->member['id'])->get_favorite($_GET['page'],$_GET['limit'],$_GET['closing']);
+		
+		echo json_encode(array("status"=>1,"datas"=>$result)); 
+	}
+        
+        
+        /**
+	*	取消收藏
+	*/
+        public function ajax_favorite_delete() {
+		$sku_ids = $_POST['sku_id'];
+		
+		$result = $this->load->service('member/member_favorite')->set_mid($this->member['id'])->delete($sku_ids);
+		if($result === false) {
+			echo json_encode(array("status"=>0,"message"=>"取消收藏失败")); 
+		} else {
+			echo json_encode(array("status"=>1,"message"=>"取消收藏成功")); 
+		}
+	}
+        
+        
+        
+         /**
+	*	用户密码修改
+	*/
+        public function ajax_member_resetpassword() { 
+                        $oldpassword = $_POST['oldpassword'];
+                        $newpassword = $_POST['newpassword'];
+		
+			if(md5(md5($oldpassword).$this->member['encrypt']) !== $this->member['password']){
+				echo json_encode(array("status"=>0,"message"=>"原密码错误"));
+                                exit;
+			}
+			
+			$data['password'] = md5(md5($newpassword).$this->member['encrypt']);
+			$data['id'] = $this->member['id'];
+			$r = $this->load->service('member/member')->update($data,FALSE);
+			if(!$r){
+				echo json_encode(array("status"=>0,"message"=>"密码修改失败"));
+                        }else{
+                                echo json_encode(array("status"=>0,"message"=>"密码修改成功"));
+                        }
+			
+	}
         
 }
