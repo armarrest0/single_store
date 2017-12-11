@@ -40,4 +40,18 @@ class public_control extends baselogin_control{
        }
        
        
+       
+        /**
+        * [ 首页]
+        */
+       public function ajax_mobile_index()
+       {
+           $list = $this->load->table('mb_items')->select();
+           foreach($list as $k=>$v){
+               $list[$k]['item_data'] = unserialize($v['item_data']);
+           }
+           echo json_encode(array("status"=>1,"datas"=>$list));       
+           
+       }
+       
 }

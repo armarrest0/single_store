@@ -181,7 +181,7 @@ class member_control extends init_control
 				'url'      => $file['url'],
 			);
             if(!defined('IN_ADMIN')) {
-                $data['issystem'] = 1;
+                $da0ta['issystem'] = 1;
                 $data['mid'] = ADMIN_ID;
             }
             if($iswrite === true) $this->load->table('attachment/attachment')->update($data);
