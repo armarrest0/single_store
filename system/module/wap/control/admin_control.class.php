@@ -42,99 +42,203 @@ class admin_control extends init_control {
 			}
 			$content_arr = array();
                         $item_data = array();
-			foreach ($_GET['content'] AS $value) {
+                        $global_list = array();
+                        $ads_list = array();
+                        $search_list = array();
+                        $spacing_list = array();
+                        $goods_list = array();
+                        $cube_list = array();
+                        $nav_list = array();
+                        $notice_list = array();
+			foreach ($_GET['content'] AS $k=>$value) {
 				$content_arr[] = '<!--'.$value.'-->';
 				preg_match_all('/diy global\s+(.+)}/',$value,$arr);
 				if($arr[1]){
-					$global_tml = json_decode(base64_decode($arr[1][0]),TRUE);                  
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'global'))->find();
-                                        $item_data['item_data'] = serialize($global_tml);
-                                        $item_data['item_type'] = 'global';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 1;
-                             
-                                        $this->load->table('mb_items')->update($item_data);
-				}                                
-                                
+					$global_tml = json_decode(base64_decode($arr[1][0]),TRUE);      
+                                        $global_list[$k] = $global_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'global'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'global'))->delete();
+                                        }
+                                        
+				}          
                                 
                                 preg_match_all('/diy ads\s+(.+)}/',$value,$arr);
 				if($arr[1]){
 					$ads_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'ads'))->find();
-                                        $item_data['item_data'] = serialize($ads_tml);
-                                        $item_data['item_type'] = 'ads';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 2;
-                                        $this->load->table('mb_items')->update($item_data);
+                                        $ads_list[$k] = $ads_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'ads'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'ads'))->delete();
+                                        }
+
 				}
                                 
                                 preg_match_all('/diy search\s+(.+)}/',$value,$arr);
 				if($arr[1]){
 					$search_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'search'))->find();
-                                        $item_data['item_data'] = serialize($search_tml);
-                                        $item_data['item_type'] = 'search';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 3;
-                                        $this->load->table('mb_items')->update($item_data);
+                                        $search_list[$k] = $search_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'search'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'search'))->delete();
+                                        }
+
 				}
                                 
                                 preg_match_all('/diy spacing\s+(.+)}/',$value,$arr);
 				if($arr[1]){
 					$spacing_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'spacing'))->find();
-                                        $item_data['item_data'] = serialize($spacing_tml);
-                                        $item_data['item_type'] = 'spacing';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 4;
-                                        $this->load->table('mb_items')->update($item_data);
+                                        $spacing_list[$k] = $spacing_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'spacing'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'spacing'))->delete();
+                                        }
 				}
                                 
                                 preg_match_all('/diy goods\s+(.+)}/',$value,$arr);
 				if($arr[1]){
-					$goods_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'goods'))->find();
-                                        $item_data['item_data'] = serialize($goods_tml);
-                                        $item_data['item_type'] = 'goods';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 5;
-                                        $this->load->table('mb_items')->update($item_data);
+					$goods_tml = json_decode(base64_decode($arr[1][0]),TRUE);                                      
+                                        $goods_list[$k] = $goods_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'goods'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'goods'))->delete();
+                                        }
 				}
                                 
                                 preg_match_all('/diy cube\s+(.+)}/',$value,$arr);
 				if($arr[1]){
 					$cube_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'cube'))->find();
-                                        $item_data['item_data'] = serialize($cube_tml);
-                                        $item_data['item_type'] = 'cube';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 6;
-                                        $this->load->table('mb_items')->update($item_data);
+                                        $cube_list[$k] = $cube_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'cube'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'cube'))->delete();
+                                        }
 				}
                                 
                                 preg_match_all('/diy nav\s+(.+)}/',$value,$arr);
 				if($arr[1]){
 					$nav_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'nav'))->find();
-                                        $item_data['item_data'] = serialize($nav_tml);
-                                        $item_data['item_type'] = 'nav';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 7;
-                                        $this->load->table('mb_items')->update($item_data);
+                                        $nav_list[$k] = $nav_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'nav'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'nav'))->delete();
+                                        }
+
 				}
                                 
                                 preg_match_all('/diy notice\s+(.+)}/',$value,$arr);
 				if($arr[1]){
 					$notice_tml = json_decode(base64_decode($arr[1][0]),TRUE);
-                                        $item_data = $this->load->table('mb_items')->where(array("item_type"=>'notice'))->find();
-                                        $item_data['item_data'] = serialize($notice_tml);
-                                        $item_data['item_type'] = 'notice';
-                                        $item_data['item_usable'] = 1;
-                                        $item_data['item_sort'] = 8;
-                                        $this->load->table('mb_items')->update($item_data);
-				}                                
-                              
+                                        $notice_list[$k] = $notice_tml;
+                                        $row = $this->load->table('mb_items')->where(array("item_type"=>'notice'))->find();
+                                        if($row){
+                                            $this->load->table('mb_items')->where(array("item_type"=>'notice'))->delete();
+                                        }
+				}  
 			}
+                        
+                       ;
+                        foreach($_GET['content'] as $k=>$v){
+                           if($global_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'global'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($global_list);
+                                    $item_data['item_type'] = 'global';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($ads_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'ads'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($ads_list);
+                                    $item_data['item_type'] = 'ads';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($search_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'search'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($search_list);
+                                    $item_data['item_type'] = 'search';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($spacing_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'spacing'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($spacing_list);
+                                    $item_data['item_type'] = 'spacing';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($goods_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'goods'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($goods_list);
+                                    $item_data['item_type'] = 'goods';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($cube_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'cube'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($cube_list);
+                                    $item_data['item_type'] = 'cube';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($nav_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'nav'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($nav_list);
+                                    $item_data['item_type'] = 'nav';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }
+                                
+                           }elseif($notice_list[$k]){
+                                $row = $this->load->table('mb_items')->where(array("item_type"=>'notice'))->find();
+                                if($row){
+                                    continue;
+                                }else{
+                                    $item_data['item_data'] = serialize($notice_list);
+                                    $item_data['item_type'] = 'notice';
+                                    $item_data['item_usable'] = 1;
+                                    $item_data['item_sort'] = $k+1;                             
+                                    $this->load->table('mb_items')->update($item_data);
+                                }                                
+                           }else{
+                               continue;
+                           }
+                        }
+                        
                         
 			cache('wap_global',$global_tml);
 			$content = '{template header goods}'."\r\n".'<body>'."\r\n".implode("\r\n",$content_arr)."\r\n".'</body>'."\r\n".'</html>';
